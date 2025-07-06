@@ -1,0 +1,25 @@
+# IDE files
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.env
+venv/
+.venv/
+
+#Personal Files
+14TeamADJAllLotto.csv
+14TeamAllLotto.csv
+14TeamBase.csv
+14TeamHJHodds.csv
+TEST.Py
+
+DraftXTimes
+DraftXTimes.csv
+MultiSim.py
+DraftSim.py
