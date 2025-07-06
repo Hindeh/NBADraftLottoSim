@@ -1,3 +1,7 @@
 # NBADraftLottoSim
 ## Author: Hunter Hinde
-Open the SimXtimes.py file. This is where all of the work happens. There are a few global variables at the top that will change the function of how the lottery works.
+Open the SimXtimes.py file. This is where all of the work happens. There are a few global variables at the top that will change the function of how the lottery works. You can change the amount of teams, the amount of simulations ran, and a core change to the lottery. Currently the lottery is only for the top 5 teams. After that it goes in order. The ALLOTTO does a draw for each team. If you change the amount of teams be sure to change the odds in the RunSim function to accommodate for the amount of teams you have created. 
+
+Creating new odds: Adding up odds to 1,000 was always the easiest way to do it, that way you can do the math to find the correct percentage in your head, and you do not need to use any decimal places but can still be precise in the way that you are creating the odds. After that change the _oddsChoice_ (located at line 77 in runSim) variable to the odds you would like to use. There are some odds options for 14 teams and 16 teams already located under runSim. Note that the 0 entry is for the worst team, and as the number increases it is a team that had a better record. Odd's should start with 0 and end with 1 number before the number of teams.
+
+Note: Team names are hardcoded to not be actual NBA teams, since that would make the result more confusing. Instead they are named as Team 1, Team 2, Team 3 etc. Team 1 is the worst team, and would normally have the highest draft odds. 
