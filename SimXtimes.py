@@ -1,14 +1,13 @@
 #Author: Hunter Hinde
 #Description: Will run draft sim Code X times and output results to a CSV file.
-#Notes: Only things that need to change are runSim and the global variables. Global vars are labeled accordingly.
-#To change runSim I have the odds I used and some options for it as well.
 from numpy.random import choice
 import csv
-#REMINDER: team 1 is the worst team and is at the top
-#listDic: make a dictionary for each team, 1:99 2:9 means they picked first 99 times and second 9 times
+#REMINDER: team 1 is the worst team and is at the top of the file
+#REMINDER: RunSim has some odds included, but more can be added there and named for ease of use later.
 OUTFI = "testing.csv" #name of the output CSV file. (keep .csv for ease of use)
-NUMSIMS = 100 #1 million sims
-NUMTEAMS = 16 #number of teams we are making. Can do more teams than odds, and will be blank in output CSV.
+NUMSIMS = 100 #The number of simulations to run
+NUMTEAMS = 16 #The number of teams we are making. Can do more teams than odds, and will be blank in output CSV.
+ALLLOTTO = True
 def makeText(numTeams):
     # makes team names, and header for CSV since already in that loop
     header = ["Team #"]
@@ -22,7 +21,7 @@ def makeText(numTeams):
     return header, team_names
 
 def runSim(team_names, display = False,check = False,allLotto = False):
-    """team_names is the output of makeText(). display is for error checking, and so is check. allLotton changes
+    """team_names is the output of makeText(). display is for error checking, and so is check. allLotto changes
     whether or not we are drawing all 14 or only the first 4 picks"""
     # get draft results in raw format
     # Run the drawing, removing selected teams once chosen, uses standings after the 5th pick
@@ -126,7 +125,7 @@ def makeDics(team_names):
 
 def simOnce(listDics,team_names):
     ##runs sim once and adds results to dictionaries as output
-    draftOrder = runSim(team_names, allLotto=True) #can change allLotto here!
+    draftOrder = runSim(team_names, ALLLOTTO) #can change allLotto here!
     pick = 1
     for team in draftOrder: #goes through the list in order starting with best pick
         #hard coded to get the number from how I named the teams i.e. team 1 team 2 ... team 14
